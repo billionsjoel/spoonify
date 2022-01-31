@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/billionsjoel/spoonify/issues"
   },
-  "homepage": "https://github.com/billionsjoel/spoonify#readme"
+  "homepage": "https://github.com/billionsjoel/spoonify#readme",
+  "devDependencies": {
+    "hint": "^6.1.9"
+  }
 }
