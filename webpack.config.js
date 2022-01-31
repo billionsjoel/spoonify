@@ -18,8 +18,8 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			// Options similar to the same options in webpackOptions.output
 			// both options are optional
-			filename: 'css/style.css',
-			chunkFilename: 'css/[id].css',
+			filename: 'modules/assets/css/style.css',
+			chunkFilename: 'modules/assets/css/[id].css',
 		}),
 	],
 	module: {
