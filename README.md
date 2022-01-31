@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# The Recipe App
+# The Recipe App.
 
 > This app helps you search all recipes on the internet and provides you with all necessary information you need about the recipe. You can comment, reserve or like a recipe.
 
