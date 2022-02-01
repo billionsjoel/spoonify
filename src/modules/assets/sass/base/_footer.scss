@@ -4,13 +4,13 @@
   margin-top: 2rem;
   width: 100%;
 
-  &__container {
+  & .footer-container {
     border-top: 1px solid $bg-text-dark;
     color: $bg-text-dark;
     padding: 1rem 0;
     font-size: 1.15rem;
 
-    & .footer-text {
+    & .footer__text {
       text-align: right;
       padding-right: 0.95rem;
 
