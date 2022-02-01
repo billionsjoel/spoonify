@@ -1,11 +1,18 @@
 //  js entry file
 import './modules/assets/sass/style.scss';
-import { displayPopup } from './modules/models/controllers.js';
+import { displayPopup, closePopup } from './modules/models/controllers.js';
 
 const showPopup = document.querySelectorAll('.btn');
+const hidePopup = document.querySelectorAll('.close-btn');
 
 showPopup.forEach((btn) => {
   btn.addEventListener('click', () => {
     displayPopup();
+  });
+});
+
+hidePopup.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    closePopup();
   });
 });
