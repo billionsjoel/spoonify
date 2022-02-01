@@ -1,0 +1,44 @@
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem;
+
+  & .logo-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+
+  & .logo__img {
+    height: 4rem;
+    width: 4rem;
+    border: 2px solid $bg-text-dark;
+    border-radius: 50%;
+
+    & svg {
+      margin: 1rem 1rem;
+    }
+  }
+}
+
+    & .navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & > ul {
+        list-style: none;
+        display: flex;
+
+        gap: 4rem;
+
+        & > li {
+          color: $bg-text-dark;
+          font-size: 1.3rem;
+        }
+      }
+    }
+}
+
