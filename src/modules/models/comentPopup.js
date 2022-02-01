@@ -1,7 +1,6 @@
-// eslint-disable-next-line import/prefer-default-export
-export const comentPopup = document.createElement('div');
-comentPopup.className = 'comments-popup';
-comentPopup.innerHTML = `<div class="recipe">
+const commentPopup = document.querySelector('#popup');
+commentPopup.className = 'comments-popup';
+commentPopup.innerHTML = `<div class="recipe">
                            <button type="button" class="close-btn clickable">&times;</button>
                            <div class="recipe__image">
                              <img src="https://www.themealdb.com/images/category/chicken.png" alt="recipe image">
@@ -41,3 +40,5 @@ comentPopup.innerHTML = `<div class="recipe">
                              </div>
                            </div>
                          </div>`;
+
+export default commentPopup;
