@@ -1,9 +1,20 @@
 @import "variables";
 
 .comments-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  margin: 0.4rem auto;
+  display: none;
+  transition: 1s;
+  height: 100%;
+  overflow-y: scroll;
+
   .recipe {
     position: relative;
-    border: 1px solid #655a56;
+    border: 1px solid $bg-text-dark;
     border-radius: 0.4rem;
     display: flex;
     justify-content: center;
@@ -90,11 +101,11 @@
           padding: 1rem;
           font-size: 1rem;
           text-align: center;
-          color: #f9f5f3;
+          color: $bg-color-light;
           border-radius: 5px;
           width: 100%;
-          background-color: #968b87;
-          box-shadow: 2px 2px 2px #655a56;
+          background-color: $bg-color;
+          box-shadow: 2px 2px 2px $bg-text-dark;
           margin-bottom: 1rem;
         }
       }
