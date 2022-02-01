@@ -31,7 +31,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Install
  After cloning the project you need to run these commands
- - `` nmp install `` `` This command will download all the dependancies of the project ``
+ - `` npm install `` `` This command will download all the dependancies of the project ``
  - `` npm run build ``
  - `` npm run start ``
 
