@@ -26,14 +26,14 @@ To get a local copy up and running follow these simple example steps.
 - Text Editor or IDE
 
 ### Setup
- - copy the git link for cloning.
+ 1. Clone the Repo or Download the Zip file or ``` https://github.com/billionsjoel/spoonify.git ```.
+ 2. ``` cd/spoonify ```
 
 ### Install
- - Open terminal
- - run git clone (link)
- - run nmp install
- - run npm build
- - run npm start
+ After cloning the project you need to run these commands
+ - `` nmp install `` `` This command will download all the dependancies of the project ``
+ - `` npm run build ``
+ - `` npm run start ``
 
 ### Tests
 - run npm test
@@ -44,11 +44,17 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 ** Atugonza Billions joel**
+👤 ** Atugonza Billions joel **
 
 - GitHub: [@billionsjoel](https://github.com/billionsjoel)
 - Twitter: [@billionsjoel](https://twitter.com/BillionsJoel)
 - LinkedIn: [billionsjoel](https://www.linkedin.com/in/billionsjoel/)
+
+👤 ** Tresor Sawasawa **
+
+- GitHub: [@tresorsawasawa](https://github.com/tresorsawasawa)
+- Twitter: [@tresorsawasawa](https://twitter.com/TresorSawasawa)
+- LinkedIn: [Trésor Sawasawa](https://www.linkedin.com/in/tr%C3%A9sor-sawasawa-43745320b/)
 
 
 ## 🤝 Contributing
