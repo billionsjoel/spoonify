@@ -1,4 +1,5 @@
 @import "variables";
+
 *,
 ::after,
 ::before {
@@ -9,9 +10,13 @@
 
 body {
   font-family: 'Nunito', sans-serif;
-  background-image: linear-gradient(to right bottom, rgb(251,219,137), rgb(244,137,130));
+  background-image: linear-gradient(to right bottom, rgb(251, 219, 137), rgb(244, 137, 130));
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.heading {
+  display: none;
 }
 
 .container {
