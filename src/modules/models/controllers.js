@@ -11,3 +11,9 @@ export const displayPopup = () => {
   commentPopup.style.display = 'block';
 };
 
+export const closePopup = () => {
+  header.style.display = 'block';
+  main.style.display = 'block';
+  footer.style.display = 'block';
+  commentPopup.style.display = 'none';
+};
