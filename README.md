@@ -44,7 +44,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 ** Atugonza Billions joel**
+👤 ** Atugonza Billions joel **
 
 - GitHub: [@billionsjoel](https://github.com/billionsjoel)
 - Twitter: [@billionsjoel](https://twitter.com/BillionsJoel)
