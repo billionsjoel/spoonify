@@ -15,9 +15,11 @@ body {
   background-size: cover;
 }
 
-.heading {
-  display: none;
-}
+a { text-decoration: none; }
+
+.clickable { cursor: pointer; }
+
+.heading { display: none; }
 
 .container {
   width: 60%;
