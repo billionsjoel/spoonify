@@ -1,4 +1,5 @@
 import { cardsContainer, paginationContainer } from './UI.js';
+import { cardsContainer } from './UI.js';
 
 const renderRecipe = (recipe) => {
   const cardHtml = `<div class="card" data-id = "${recipe.idCategory}">

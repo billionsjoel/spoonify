@@ -19,6 +19,13 @@ const seePop = async () => {
 
   // prepare UI for results
   renderLoader(cardsContainer);
+
+  // search for results
+  await state.recipe.getRecipies();
+
+  //  render results on the UI
+  // console.log(state.recipe.results);
+  clearLoader();
   commentBnts.forEach((btn) => {
     btn.addEventListener('click', () => {
       const cardId = btn.parentNode.parentNode.dataset.id;
