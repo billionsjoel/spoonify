@@ -18,3 +18,4 @@ const clearLoader = () => {
 	}
 };
 
+export { renderLoader, cardsContainer, clearLoader };
