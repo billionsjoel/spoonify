@@ -1,7 +1,7 @@
 import cardsContainer from './UI.js';
 
 const renderRecipe = (recipe) => {
-  const cardHtml = `<div class="card">
+  const cardHtml = `<div class="card" data-id = "${recipe.idCategory}">
             <div class="card-image">
               <img src="${recipe.strCategoryThumb}" alt="recipe image">
             </div>
@@ -14,7 +14,7 @@ const renderRecipe = (recipe) => {
               </div>
             </div>
             <div class="btn-container">
-              <div class="btn">Comments</div>
+              <button class="btn seePop-btn">Comments</button>
             </div>
           </div>`;
   cardsContainer.innerHTML += cardHtml;
