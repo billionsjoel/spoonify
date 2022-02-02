@@ -1,5 +1,10 @@
 const cardsContainer = document.querySelector('.cards');
+const paginationContainer = document.querySelector('.pagination-container');
 
+const clearResults = () => {
+  cardsContainer.innerHTML = '';
+  paginationContainer.innerHTML = '';
+};
 const renderLoader = (parent) => {
   const loader = `
           <div class="loader">
@@ -18,4 +23,10 @@ const clearLoader = () => {
   }
 };
 
-export { renderLoader, cardsContainer, clearLoader };
+export {
+  renderLoader,
+  cardsContainer,
+  clearLoader,
+  paginationContainer,
+  clearResults,
+};

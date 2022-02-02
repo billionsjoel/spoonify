@@ -1,0 +1,23 @@
+@import "_variables";
+
+.pagination-container {
+  width: 79%;
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
+  padding: 1rem;
+  gap: 80%;
+
+  & .pagination {
+    background-image: linear-gradient(to right bottom, rgb(251, 219, 137), rgb(244, 137, 130));
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50px;
+    width: 6rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

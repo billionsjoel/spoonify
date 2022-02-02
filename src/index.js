@@ -5,6 +5,8 @@ import {
   renderLoader,
   cardsContainer,
   clearLoader,
+  paginationContainer,
+  clearResults,
 } from './modules/views/UI.js';
 import { closePopup, displayPopup } from './modules/models/controllers.js';
 import showPop from './modules/views/comentPopup.js';
@@ -17,8 +19,12 @@ const seePop = async () => {
 
   // prepare UI for results
   renderLoader(cardsContainer);
+
   // search for results
   await state.recipe.getRecipies();
+
+  clearLoader();
+  //  render results on the UI
 
   //  render results on the UI
   // console.log(state.recipe.results);
@@ -36,6 +42,9 @@ const seePop = async () => {
   });
 };
 
+clearLoader();
+//  render results on the UI
+
 const updateGlobalState = async () => {
   state.recipe = new Recipies();
   await state.recipe.getRecipies();
@@ -46,4 +55,13 @@ const updateGlobalState = async () => {
 
 window.addEventListener('load', () => {
   updateGlobalState();
+});
+
+paginationContainer.addEventListener('click', (e) => {
+  const btn = e.target.closest('.pagination');
+  if (btn) {
+    const goToPage = parseInt(btn.dataset.goto, 10);
+    clearResults();
+    renderResults(state.recipe.results.categories, goToPage);
+  }
 });
