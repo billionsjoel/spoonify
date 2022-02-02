@@ -11,4 +11,10 @@ const renderLoader = (parent) => {
 	parent.insertAdjacentHTML('afterbegin', loader);
 };
 
+const clearLoader = () => {
+	const loaderBtn = document.querySelector('.loader');
+	if (loaderBtn) {
+		loaderBtn.parentElement.removeChild(loaderBtn);
+	}
+};
 
