@@ -1,3 +1,3 @@
 const cardsContainer = document.querySelector('.cards');
 
-export { cardsContainer };
+export default cardsContainer;

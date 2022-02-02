@@ -13,13 +13,13 @@
  */
 
 export default class Recipies {
-	constructor() {
-		this.query = 'https://www.themealdb.com/api/json/v1/1/categories.php';
-	}
+  constructor() {
+    this.query = 'https://www.themealdb.com/api/json/v1/1/categories.php';
+  }
 
-	getRecipies = async (id) => {
-		const response = await fetch(`${this.query}`);
-		this.results = await response.json();
-		return this.results;
-	};
+getRecipies = async () => {
+  const response = await fetch(`${this.query}`);
+  this.results = await response.json();
+  return this.results;
+};
 }
