@@ -1,14 +1,24 @@
 //  js entry file
 import './modules/assets/sass/style.scss';
-import { displayPopup, closePopup } from './modules/models/controllers.js';
+import Recipies from './modules/models/api.js';
+import renderResults from './modules/views/renderResults.js';
 
-const showPopup = document.querySelectorAll('.btn');
-const hidePopup = document.querySelectorAll('.close-btn');
+const state = {};
 
-showPopup.forEach((btn) => {
-  btn.addEventListener('click', displayPopup);
-});
+const updateGlobalState = async () => {
+  // instatiate api call
+  state.recipe = new Recipies();
 
-hidePopup.forEach((btn) => {
-  btn.addEventListener('click', closePopup);
+  // prepare UI for results
+
+  // search for results
+  await state.recipe.getRecipies();
+
+  //  render results on the UI
+  // console.log(state.recipe.results);
+  renderResults(state.recipe.results.categories);
+};
+
+window.addEventListener('load', () => {
+  updateGlobalState();
 });
