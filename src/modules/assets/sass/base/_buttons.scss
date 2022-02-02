@@ -23,7 +23,7 @@
     cursor: pointer;
 
     &:hover {
-        background-image: linear-gradient(to right bottom, darken($color-primary,0.9), darken($color-primary-dark,0.9));
+      background-image: linear-gradient(to right bottom, darken($color-primary, 0.9), darken($color-primary-dark, 0.9));
     }
   }
 }
