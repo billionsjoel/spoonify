@@ -16,12 +16,13 @@ const updateGlobalState = async () => {
 
   // prepare UI for results
   renderLoader(cardsContainer);
+
   // search for results
   await state.recipe.getRecipies();
 
-  //  render results on the UI
-  // console.log(state.recipe.results);
   clearLoader();
+  //  render results on the UI
+
   renderResults(state.recipe.results.categories);
 };
 
