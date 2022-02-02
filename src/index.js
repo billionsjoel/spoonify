@@ -32,8 +32,8 @@ const seePop = async () => {
   });
 };
 
-  clearLoader();
-  //  render results on the UI
+clearLoader();
+//  render results on the UI
 
 const updateGlobalState = async () => {
   state.recipe = new Recipies();
