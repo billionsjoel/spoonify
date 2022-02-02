@@ -13,11 +13,17 @@
     background-repeat: no-repeat;
     background-size: cover;
     border: none;
+    color: $bg-color-light;
     padding: 0.5rem;
     border-radius: 50px;
     width: 6rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        background-image: linear-gradient(to right bottom, darken($color-primary,0.9), darken($color-primary-dark,0.9));
+    }
   }
 }
