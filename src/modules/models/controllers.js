@@ -1,4 +1,4 @@
-import commentPopup from './comentPopup.js';
+const commentPopup = document.querySelector('#popup');
 
 const header = document.querySelector('#header');
 const main = document.querySelector('#main');

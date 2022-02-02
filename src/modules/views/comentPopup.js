@@ -1,23 +1,17 @@
-const commentPopup = document.querySelector('#popup');
-commentPopup.className = 'comments-popup';
-commentPopup.innerHTML = `<div class="recipe">
+const showPop = (recipe) => {
+  const commentPopup = document.querySelector('#popup');
+  commentPopup.className = 'comments-popup';
+  commentPopup.innerHTML = `<div class="recipe">
                            <button type="button" class="close-btn clickable">&times;</button>
                            <div class="recipe__image">
-                             <img src="https://www.themealdb.com/images/category/chicken.png" alt="recipe image">
+                             <img src="${recipe.strCategoryThumb}" alt="recipe image">
                            </div>
                            <div class="recipe__text">
                              <div class="recipe-title">
-                               <h2>Pizza</h2>
+                               <h2>${recipe.strCategory}</h2>
                              </div>
                              <div class="details">
-                               <div class="block-1">
-                                 <p><span>Lorem:</span><span> Ipsum</span></p>
-                                 <p><span>Lorem:</span><span> Ipsum</span></p>
-                               </div>
-                               <div class="block-2">
-                                 <p><span>Lorem:</span><span> Ipsum</span></p>
-                                 <p><span>Lorem:</span><span> Ipsum</span></p>
-                               </div>
+                              <p>${recipe.strCategoryDescription}</p>
                              </div>
                            </div>
                            <div class="comments">
@@ -40,5 +34,6 @@ commentPopup.innerHTML = `<div class="recipe">
                              </div>
                            </div>
                          </div>`;
+};
 
-export default commentPopup;
+export default showPop;

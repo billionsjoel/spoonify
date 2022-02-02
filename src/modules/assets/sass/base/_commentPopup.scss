@@ -36,11 +36,12 @@
 
     &__text {
       margin: 1rem 0;
-      width: 300px;
+      width: 80%;
 
       & h2 {
         text-align: center;
         color: $bg-text-dark;
+        margin-bottom: 0.5rem;
       }
 
       .details {
@@ -48,6 +49,7 @@
         justify-content: space-between;
         align-items: center;
         color: $bg-text-dark;
+        text-align: justify;
       }
     }
 
@@ -78,7 +80,7 @@
       }
 
       & .new-comment {
-        width: 270px;
+        width: 100%;
 
         .form {
           width: 100%;
