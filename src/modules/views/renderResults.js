@@ -67,6 +67,13 @@ const renderBtns = (page, numResults, resPerPage) => {
 	paginationContainer.insertAdjacentHTML('afterbegin', button);
 };
 
+const renderResults = (recipies, page = 2, resPerPage = 6) => {
+	const start = (page - 1) * resPerPage;
+	const end = page * resPerPage;
+	recipies.slice(start, end).forEach(renderRecipe);
 
+	// render pagination buttons
+	renderBtns(page, recipies.length, resPerPage);
+};
 
 export default renderResults;
