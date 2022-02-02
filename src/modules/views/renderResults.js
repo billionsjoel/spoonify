@@ -1,7 +1,7 @@
-import { cardsContainer } from './UI.js';
+import { cardsContainer, paginationContainer } from './UI.js';
 
 const renderRecipe = (recipe) => {
-  const cardHtml = `<div class="card">
+	const cardHtml = `<div class="card">
             <div class="card-image">
               <img src="${recipe.strCategoryThumb}" alt="recipe image">
             </div>
@@ -17,11 +17,63 @@ const renderRecipe = (recipe) => {
               <div class="btn">Comments</div>
             </div>
           </div>`;
-  cardsContainer.innerHTML += cardHtml;
+	cardsContainer.innerHTML += cardHtml;
 };
 
-const renderResults = (recipies) => {
-  recipies.forEach(renderRecipe);
+const createBtn = (page, type) => {
+	return `<button class="pagination" data-goto = ${
+		type === 'prev' ? page - 1 : page + 1
+	} >
+    <span>Page ${type === 'prev' ? page - 1 : page + 1}</span>
+${
+	type === 'prev'
+		? `<svg xmlns="http://www.w3.org/2000/svg" height="15" width="20" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+</svg>`
+		: `<svg
+			xmlns="http://www.w3.org/2000/svg"
+			height="15"
+			width="20"
+			class="right"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke="currentColor"
+		>
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="M13 5l7 7-7 7M5 5l7 7-7 7"
+			/>
+		</svg>`
+}
+
+      </button>`;
+};
+
+const renderBtns = (page, numResults, resPerPage) => {
+	const pages = Math.ceil(numResults / resPerPage);
+	let button;
+	if (page === 1 && pages > 1) {
+		// only button to go to next stage
+		button = createBtn(page, 'next');
+	} else if (page < pages) {
+		// Both buttons
+		button = `${createBtn(page, 'prev')}${createBtn(page, 'next')}`;
+	} else if (page === pages && pages > 1) {
+		// only page to go to prev page
+		button = createBtn(page, 'prev');
+	}
+	paginationContainer.insertAdjacentHTML('afterbegin', button);
+};
+
+const renderResults = (recipies, page = 2, resPerPage = 6) => {
+	const start = (page - 1) * resPerPage;
+	const end = page * resPerPage;
+	recipies.slice(start, end).forEach(renderRecipe);
+
+	// render pagination buttons
+	renderBtns(page, recipies.length, resPerPage);
 };
 
 export default renderResults;
