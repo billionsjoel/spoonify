@@ -19,10 +19,12 @@
 //}
 
 const getRecipies = async () => {
-	const response = await fetch(
+	let recipies = await fetch(
 		'https://www.themealdb.com/api/json/v1/1/categories.php'
-	);
-	return response.json();
+	)
+		.then((response) => response.json())
+		.then((data) => data);
+	return recipies;
 };
 
 export default getRecipies;
