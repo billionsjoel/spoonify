@@ -32,4 +32,11 @@ window.addEventListener('load', () => {
 	updateGlobalState();
 });
 
-
+paginationContainer.addEventListener('click', (e) => {
+	const btn = e.target.closest('.pagination');
+	if (btn) {
+		const goToPage = parseInt(btn.dataset.goto, 10);
+		clearResults();
+		renderResults(state.recipe.results.categories, goToPage);
+	}
+});
