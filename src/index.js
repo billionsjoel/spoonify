@@ -26,6 +26,9 @@ const seePop = async () => {
   clearLoader();
   //  render results on the UI
 
+  //  render results on the UI
+  // console.log(state.recipe.results);
+  clearLoader();
   commentBnts.forEach((btn) => {
     btn.addEventListener('click', () => {
       const cardId = btn.parentNode.parentNode.dataset.id;
@@ -38,6 +41,9 @@ const seePop = async () => {
     });
   });
 };
+
+clearLoader();
+//  render results on the UI
 
 const updateGlobalState = async () => {
   state.recipe = new Recipies();
