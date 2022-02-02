@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 2rem;
 
   & .card {
@@ -14,6 +15,16 @@
     align-items: center;
     border: 1px solid $bg-text-dark;
     padding: 1rem;
+
+    & .card-image {
+
+      & > img {
+        width: auto;
+        overflow: hidden;
+        object-fit: cover;
+        width: 15rem;
+        }
+    }
 
     & .card-text {
       display: flex;

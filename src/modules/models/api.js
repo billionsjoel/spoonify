@@ -12,19 +12,14 @@
  |
  */
 
-//class recipes {
-//	constructor(queryResults) {
-//		this.result = queryResults;
-//	}
-//}
+export default class Recipies {
+	constructor() {
+		this.query = 'https://www.themealdb.com/api/json/v1/1/categories.php';
+	}
 
-const getRecipies = async () => {
-	let recipies = await fetch(
-		'https://www.themealdb.com/api/json/v1/1/categories.php'
-	)
-		.then((response) => response.json())
-		.then((data) => data);
-	return recipies;
-};
-
-export default getRecipies;
+	getRecipies = async (id) => {
+		const response = await fetch(`${this.query}`);
+		this.results = await response.json();
+		return this.results;
+	};
+}
