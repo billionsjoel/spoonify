@@ -21,7 +21,7 @@ const updateGlobalState = async () => {
 
 	//  render results on the UI
 	// console.log(state.recipe.results);
-	clearLoader();
+	//clearLoader();
 	renderResults(state.recipe.results.categories);
 };
 
