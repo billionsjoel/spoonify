@@ -6,13 +6,9 @@ const showPopup = document.querySelectorAll('.btn');
 const hidePopup = document.querySelectorAll('.close-btn');
 
 showPopup.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    displayPopup();
-  });
+  btn.addEventListener('click', displayPopup);
 });
 
 hidePopup.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    closePopup();
-  });
+  btn.addEventListener('click', closePopup);
 });
