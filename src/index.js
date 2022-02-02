@@ -1,4 +1,3 @@
-//  js entry file
 import './modules/assets/sass/style.scss';
 import Recipies from './modules/models/api.js';
 import renderResults from './modules/views/renderResults.js';
@@ -9,23 +8,39 @@ import {
   paginationContainer,
   clearResults,
 } from './modules/views/UI.js';
+import { closePopup, displayPopup } from './modules/models/controllers.js';
+import showPop from './modules/views/comentPopup.js';
 
 const state = {};
 
-const updateGlobalState = async () => {
-  // instatiate api call
-  state.recipe = new Recipies();
+const seePop = async () => {
+  const commentBnts = document.querySelectorAll('.btn');
+  const recipies = await state.recipe.results.categories;
 
   // prepare UI for results
   renderLoader(cardsContainer);
+  commentBnts.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const cardId = btn.parentNode.parentNode.dataset.id;
+      displayPopup();
+      recipies.find((recipe) => recipe.idCategory === cardId);
+      showPop(recipies.find((recipe) => recipe.idCategory === cardId));
 
-  // search for results
-  await state.recipe.getRecipies();
+      const hidePopup = document.querySelector('.close-btn');
+      hidePopup.addEventListener('click', closePopup);
+    });
+  });
+};
 
   clearLoader();
   //  render results on the UI
 
+const updateGlobalState = async () => {
+  state.recipe = new Recipies();
+  await state.recipe.getRecipies();
   renderResults(state.recipe.results.categories);
+  showPop(state.recipe.results.categories);
+  seePop();
 };
 
 window.addEventListener('load', () => {
