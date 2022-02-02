@@ -51,21 +51,7 @@ ${
       </button>`;
 };
 
-const renderBtns = (page, numResults, resPerPage) => {
-	const pages = Math.ceil(numResults / resPerPage);
-	let button;
-	if (page === 1 && pages > 1) {
-		// only button to go to next stage
-		button = createBtn(page, 'next');
-	} else if (page < pages) {
-		// Both buttons
-		button = `${createBtn(page, 'prev')}${createBtn(page, 'next')}`;
-	} else if (page === pages && pages > 1) {
-		// only page to go to prev page
-		button = createBtn(page, 'prev');
-	}
-	paginationContainer.insertAdjacentHTML('afterbegin', button);
-};
+
 
 const renderResults = (recipies, page = 2, resPerPage = 6) => {
 	const start = (page - 1) * resPerPage;
