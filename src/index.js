@@ -1,7 +1,7 @@
 //  js entry file
 import './modules/assets/sass/style.scss';
-import Recipies from './modules/models/api';
-import renderResults from './modules/views/renderResults';
+import Recipies from './modules/models/api.js';
+import renderResults from './modules/views/renderResults.js';
 
 const state = {};
 

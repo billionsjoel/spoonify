@@ -17,13 +17,11 @@
     padding: 1rem;
 
     & .card-image {
-
       & > img {
-        width: auto;
         overflow: hidden;
         object-fit: cover;
         width: 15rem;
-        }
+      }
     }
 
     & .card-text {
