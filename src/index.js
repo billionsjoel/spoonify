@@ -8,6 +8,7 @@ import {
 } from './modules/views/UI.js';
 import { closePopup, displayPopup } from './modules/models/controllers.js';
 import showPop from './modules/views/comentPopup.js';
+import { sendComment, getComments } from './modules/models/involvementApi.js';
 
 const state = {};
 
@@ -23,15 +24,33 @@ const seePop = async () => {
   //  render results on the UI
   // console.log(state.recipe.results);
   clearLoader();
+
   commentBnts.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const cardId = btn.parentNode.parentNode.dataset.id;
+    btn.addEventListener('click', async () => {
       displayPopup();
+      const cardId = btn.parentNode.parentNode.dataset.id;
       recipies.find((recipe) => recipe.idCategory === cardId);
-      showPop(recipies.find((recipe) => recipe.idCategory === cardId));
+      // showPop(recipies.find((recipe) => recipe.idCategory === cardId));
+      await showPop(recipies.find((recipe) => recipe.idCategory === cardId));
 
       const hidePopup = document.querySelector('.close-btn');
       hidePopup.addEventListener('click', closePopup);
+
+      const form = document.querySelector('.form');
+      form.addEventListener('submit', (e) => {
+        const inputName = document.querySelector('.input-name');
+        const inputComment = document.querySelector('.comment-msg');
+        const newComment = {
+          item_id: cardId,
+          username: inputName.value,
+          comment: inputComment.value,
+        };
+        e.preventDefault();
+        sendComment(newComment);
+        form.reset();
+        getComments(cardId);
+        // location.reload();
+      });
     });
   });
 };
