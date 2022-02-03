@@ -48,9 +48,6 @@ const controlLike = async (idCategory, isLiked) => {
 		});
 	}
 	toggleLikeBtn(isLiked, idCategory);
-	//if (!state.likes) state.likes = new Likes();
-
-	//User hasnt liked the current recipe
 };
 
 const initializeLikeButtons = () => {
