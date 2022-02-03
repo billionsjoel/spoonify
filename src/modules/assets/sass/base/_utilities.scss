@@ -1,37 +1,51 @@
-@import "variables";
+@import 'variables';
 
 *,
 ::after,
 ::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  list-style: none;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	list-style: none;
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
-  background-image: linear-gradient(to right bottom, rgb(251, 219, 137), rgb(244, 137, 130));
-  background-repeat: no-repeat;
-  background-size: cover;
+	font-family: 'Nunito', sans-serif;
+	background-image: linear-gradient(
+		to right bottom,
+		rgb(251, 219, 137),
+		rgb(244, 137, 130)
+	);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-a { text-decoration: none; }
+a {
+	text-decoration: none;
+}
 
-.clickable { cursor: pointer; }
+.clickable {
+	cursor: pointer;
+}
 
-.heading { display: none; }
+.heading {
+	display: none;
+}
 
 .container {
-  width: 60%;
-  margin: auto;
-  background-color: $bg-color-light;
-  height: 100vh;
+	width: 60%;
+	margin: auto;
+	background-color: $bg-color-light;
+	height: 100vh;
 }
 
 .logo-font {
-  font-family: 'Comforter', cursive;
-  letter-spacing: 0.3rem;
-  font-size: 2rem;
-  color: $bg-text-dark;
+	font-family: 'Comforter', cursive;
+	letter-spacing: 0.3rem;
+	font-size: 2rem;
+	color: $bg-text-dark;
+}
+
+.text-primary {
+	color: $color-primary-dark;
 }
