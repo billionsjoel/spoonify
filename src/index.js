@@ -8,7 +8,6 @@ import {
 	clearLoader,
 	paginationContainer,
 	clearResults,
-	likesContainer,
 } from './modules/views/UI.js';
 
 const state = {};
