@@ -57,7 +57,10 @@ const renderResults = (recipies, page = 1, resPerPage = 6) => {
 	const end = page * resPerPage;
 
 	//recipies.slice(start, end).forEach(renderRecipe);
-
+	recipies.slice(start, end).forEach(function (value, index, array) {
+		let filteredLikes = likes.filter(function (e) {
+			return value.idCategory == e.item_id;
+		});
 
 		value.likes =
 			filteredLikes == undefined || filteredLikes[0] == undefined
