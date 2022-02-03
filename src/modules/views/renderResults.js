@@ -52,22 +52,14 @@ const renderBtns = (page, numResults, resPerPage) => {
 	paginationContainer.insertAdjacentHTML('afterbegin', button);
 };
 
-const renderResults = (recipies, likes, page = 1, resPerPage = 6) => {
+const renderResults = (recipies, page = 1, resPerPage = 6) => {
 	const start = (page - 1) * resPerPage;
 	const end = page * resPerPage;
 
 	//recipies.slice(start, end).forEach(renderRecipe);
-	recipies.slice(start, end).forEach(function (value, index, array) {
-		let filteredLikes = likes.filter(function (e) {
-			return value.idCategory == e.item_id;
-		});
 
-		value.likes =
-			filteredLikes == undefined || filteredLikes[0] == undefined
-				? 0
-				: filteredLikes[0].likes;
-		renderRecipe(value);
-	});
+
+	
 	//recipies.forEach(renderLike);
 	// render pagination buttons
 	renderBtns(page, recipies.length, resPerPage);
