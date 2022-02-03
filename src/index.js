@@ -25,7 +25,7 @@ const updateGlobalState = async () => {
 	clearLoader();
 	//  render results on the UI
 
-	renderResults(state.recipe.results.categories);
+	renderResults(state.recipe.results.categories, state.likes);
 };
 
 window.addEventListener('load', async () => {
