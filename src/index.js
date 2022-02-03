@@ -46,12 +46,6 @@ const controlLike = async (idCategory, isLiked) => {
 		await addLike({
 			item_id: idCategory,
 		});
-
-		//if (addLike == 201) {
-			// Update the likes state
-			// Update the likes in categories
-			// renderResults
-	//	}
 	}
 	toggleLikeBtn(isLiked, idCategory);
 	//if (!state.likes) state.likes = new Likes();
