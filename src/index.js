@@ -1,6 +1,5 @@
 import './modules/assets/sass/style.scss';
 import Recipies, { getLikes, addLike } from './modules/models/api.js';
-import Likes from './modules/models/likes';
 import { toggleLikeBtn } from './modules/views/likesView';
 import renderResults from './modules/views/renderResults.js';
 import {
