@@ -7,13 +7,13 @@ const renderRecipe = (recipe) => {
             </div>
             <div class="card-text">
               <div class="card__title">${recipe.strCategory}</div>
-              <div class="like-btn" data-id="${recipe.idCategory}" data-liked="false" id="like${recipe.idCategory}">
-                <svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-							<span class="likes"> ${recipe.likes} likes </span>
+								<div class="like-btn" data-id="${recipe.idCategory}" data-liked="false" id="like${recipe.idCategory}">
+									<svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+									</svg>
+								</div>
             </div>
+							<div class="likes"> ${recipe.likes} likes </div>
             <div class="btn-container">
               <button class="btn seePop-btn">Comments</button>
             </div>
