@@ -41,14 +41,7 @@ paginationContainer.addEventListener('click', (e) => {
 	}
 });
 
-const controlLike = async (idCategory, isLiked) => {
-	if (!isLiked) {
-		await addLike({
-			item_id: idCategory,
-		});
-	}
-	toggleLikeBtn(isLiked, idCategory);
-};
+
 
 const initializeLikeButtons = () => {
 	const likeButtons = document.getElementsByClassName('like-btn');
