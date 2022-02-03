@@ -41,7 +41,9 @@ paginationContainer.addEventListener('click', (e) => {
 	}
 });
 
+const controlLike = async (idCategory, isLiked) => {
 
+};
 
 const initializeLikeButtons = () => {
 	const likeButtons = document.getElementsByClassName('like-btn');
