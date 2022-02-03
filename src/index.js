@@ -66,3 +66,4 @@ const initializeLikeButtons = () => {
 	}
 };
 
+export { initializeLikeButtons };
