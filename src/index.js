@@ -20,6 +20,7 @@ const updateGlobalState = async () => {
 
 	// wait and get for results
 	await state.recipe.getRecipies();
+	state.likes = await getLikes();
 
 	clearLoader();
 	//  render results on the UI
