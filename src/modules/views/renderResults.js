@@ -52,7 +52,7 @@ const renderBtns = (page, numResults, resPerPage) => {
 	paginationContainer.insertAdjacentHTML('afterbegin', button);
 };
 
-const renderResults = (recipies, page = 1, resPerPage = 6) => {
+const renderResults = (recipies, likes, page = 1, resPerPage = 6) => {
 	const start = (page - 1) * resPerPage;
 	const end = page * resPerPage;
 
