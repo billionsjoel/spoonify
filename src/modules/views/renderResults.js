@@ -59,7 +59,12 @@ const renderResults = (recipies, page = 1, resPerPage = 6) => {
 	//recipies.slice(start, end).forEach(renderRecipe);
 
 
-	
+		value.likes =
+			filteredLikes == undefined || filteredLikes[0] == undefined
+				? 0
+				: filteredLikes[0].likes;
+		renderRecipe(value);
+	});
 	//recipies.forEach(renderLike);
 	// render pagination buttons
 	renderBtns(page, recipies.length, resPerPage);
