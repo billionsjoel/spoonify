@@ -50,4 +50,7 @@ const controlLike = async (idCategory, isLiked) => {
 	toggleLikeBtn(isLiked, idCategory);
 };
 
+const initializeLikeButtons = () => {
+
+};
 
