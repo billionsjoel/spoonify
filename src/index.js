@@ -61,7 +61,7 @@ const initializeLikeButtons = () => {
 			} else {
 				likeButtons[i].setAttribute('data-liked', 'true');
 			}
-
+			controlLike(idCategory, isLiked);
 		});
 	}
 };
