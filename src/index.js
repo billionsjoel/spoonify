@@ -56,7 +56,11 @@ const initializeLikeButtons = () => {
 		likeButtons[i].addEventListener('click', (e) => {
 			const idCategory = likeButtons[i].getAttribute('data-id');
 			const isLiked = likeButtons[i].getAttribute('data-liked') == 'true';
-
+			if (isLiked) {
+				likeButtons[i].setAttribute('data-liked', 'false');
+			} else {
+				likeButtons[i].setAttribute('data-liked', 'true');
+			}
 
 		});
 	}
