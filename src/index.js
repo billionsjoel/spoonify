@@ -54,7 +54,8 @@ const initializeLikeButtons = () => {
 	const likeButtons = document.getElementsByClassName('like-btn');
 	for (let i = 0; i <= likeButtons.length - 1; i++) {
 		likeButtons[i].addEventListener('click', (e) => {
-		
+			const idCategory = likeButtons[i].getAttribute('data-id');
+			const isLiked = likeButtons[i].getAttribute('data-liked') == 'true';
 
 
 		});
