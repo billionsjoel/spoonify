@@ -1,7 +1,9 @@
 import { cardsContainer, paginationContainer } from './UI.js';
-import { initializeLikeButtons } from '../../index.js';
+import Recipies, { getLikes, addLike } from '../models/api.js';
+import { toggleLikeBtn } from './likesView';
+
 const renderRecipe = (recipe) => {
-	const cardHtml = `<div class="card" data-id = "${recipe.idCategory}">
+  const cardHtml = `<div class="card" data-id = "${recipe.idCategory}">
             <div class="card-image">
               <img src="${recipe.strCategoryThumb}" alt="recipe image">
             </div>
@@ -18,60 +20,82 @@ const renderRecipe = (recipe) => {
               <button class="btn seePop-btn">Comments</button>
             </div>
           </div>`;
-	cardsContainer.innerHTML += cardHtml;
+  cardsContainer.innerHTML += cardHtml;
 };
 
 const createBtn = (page, type) => `<button class="pagination" data-goto = ${
-	type === 'prev' ? page - 1 : page + 1
+  type === 'prev' ? page - 1 : page + 1
 } >
     <span>Page ${type === 'prev' ? page - 1 : page + 1}</span>
 ${
-	type === 'prev'
-		? `<svg xmlns="http://www.w3.org/2000/svg" height="15" width="20" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  type === 'prev'
+    ? `<svg xmlns="http://www.w3.org/2000/svg" height="15" width="20" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
 </svg>`
-		: `<svg xmlns="http://www.w3.org/2000/svg" height="15" width="20" class="right" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    : `<svg xmlns="http://www.w3.org/2000/svg" height="15" width="20" class="right" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"/></svg>`
 }
 
       </button>`;
 
 const renderBtns = (page, numResults, resPerPage) => {
-	const pages = Math.ceil(numResults / resPerPage);
-	let button;
-	if (page === 1 && pages > 1) {
-		// only button to go to next stage
-		button = createBtn(page, 'next');
-	} else if (page < pages) {
-		// Both buttons
-		button = `${createBtn(page, 'prev')}${createBtn(page, 'next')}`;
-	} else if (page === pages && pages > 1) {
-		// only page to go to prev page
-		button = createBtn(page, 'prev');
-	}
-	paginationContainer.insertAdjacentHTML('afterbegin', button);
+  const pages = Math.ceil(numResults / resPerPage);
+  let button;
+  if (page === 1 && pages > 1) {
+    // only button to go to next stage
+    button = createBtn(page, 'next');
+  } else if (page < pages) {
+    // Both buttons
+    button = `${createBtn(page, 'prev')}${createBtn(page, 'next')}`;
+  } else if (page === pages && pages > 1) {
+    // only page to go to prev page
+    button = createBtn(page, 'prev');
+  }
+  paginationContainer.insertAdjacentHTML('afterbegin', button);
 };
 
 const renderResults = (recipies, likes, page = 1, resPerPage = 6) => {
-	const start = (page - 1) * resPerPage;
-	const end = page * resPerPage;
+  const start = (page - 1) * resPerPage;
+  const end = page * resPerPage;
 
-	//recipies.slice(start, end).forEach(renderRecipe);
-	recipies.slice(start, end).forEach(function (value, index, array) {
-		let filteredLikes = likes.filter(function (e) {
-			return value.idCategory == e.item_id;
-		});
+  // recipies.slice(start, end).forEach(renderRecipe);
+  recipies.slice(start, end).forEach((value, index, array) => {
+    const filteredLikes = likes.filter((e) => value.idCategory == e.item_id);
 
-		value.likes =
-			filteredLikes == undefined || filteredLikes[0] == undefined
-				? 0
-				: filteredLikes[0].likes;
-		renderRecipe(value);
-	});
-	//recipies.forEach(renderLike);
-	// render pagination buttons
-	renderBtns(page, recipies.length, resPerPage);
-	initializeLikeButtons();
+    value.likes =			filteredLikes == undefined || filteredLikes[0] == undefined
+			  ? 0
+			  : filteredLikes[0].likes;
+    renderRecipe(value);
+  });
+  // recipies.forEach(renderLike);
+  // render pagination buttons
+  renderBtns(page, recipies.length, resPerPage);
+  initializeLikeButtons();
 };
 
-export default renderResults;
+const controlLike = async (idCategory, isLiked) => {
+  if (!isLiked) {
+    await addLike({
+      item_id: idCategory,
+    });
+  }
+  toggleLikeBtn(isLiked, idCategory);
+};
+
+const initializeLikeButtons = () => {
+  const likeButtons = document.getElementsByClassName('like-btn');
+  for (let i = 0; i <= likeButtons.length - 1; i++) {
+    likeButtons[i].addEventListener('click', (e) => {
+      const idCategory = likeButtons[i].getAttribute('data-id');
+      const isLiked = likeButtons[i].getAttribute('data-liked') == 'true';
+      if (isLiked) {
+        likeButtons[i].setAttribute('data-liked', 'false');
+      } else {
+        likeButtons[i].setAttribute('data-liked', 'true');
+      }
+      controlLike(idCategory, isLiked);
+    });
+  }
+};
+
+export { initializeLikeButtons, renderResults };

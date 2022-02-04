@@ -12,38 +12,37 @@
  |
  */
 
-const LIKES_URL =
-	'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/l1wyQq7Jrf2t34Tkma8G/likes';
+const LIKES_URL =	'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/l1wyQq7Jrf2t34Tkma8G/likes';
 
 export default class Recipies {
-	constructor() {
-		this.query = 'https://www.themealdb.com/api/json/v1/1/categories.php';
-	}
+  constructor() {
+    this.query = 'https://www.themealdb.com/api/json/v1/1/categories.php';
+  }
 
 	getRecipies = async () => {
-		const response = await fetch(`${this.query}`);
-		this.results = await response.json();
-		return this.results;
+	  const response = await fetch(`${this.query}`);
+	  this.results = await response.json();
+	  return this.results;
 	};
 }
 
 const getLikes = async () => {
-	const response = await fetch(LIKES_URL);
+  const response = await fetch(LIKES_URL);
 
-	const likes = await response.json();
+  const likes = await response.json();
 
-	return likes;
+  return likes;
 };
 
 const addLike = async (like) => {
-	const response = await fetch(LIKES_URL, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify(like),
-	});
-	return response.status;
+  const response = await fetch(LIKES_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(like),
+  });
+  return response.status;
 };
 
 export { getLikes, addLike };
