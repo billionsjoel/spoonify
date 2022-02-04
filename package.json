@@ -14,9 +14,7 @@
   "keywords": [],
   "author": "Billions A Joel",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/billionsjoel/spoonify/issues"
-  },
+  "bugs": {},
   "homepage": "https://github.com/billionsjoel/spoonify#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
