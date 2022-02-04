@@ -87,6 +87,7 @@ const renderNavItems = (length) => {
 };
 
 const renderResults = (recipies, likes, page = 1, resPerPage = 6) => {
+  renderNavItems(recipies.length);
   const start = (page - 1) * resPerPage;
   const end = page * resPerPage;
 
