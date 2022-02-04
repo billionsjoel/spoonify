@@ -1,4 +1,4 @@
-import { cardsContainer, paginationContainer } from './UI.js';
+import { cardsContainer, navListContainer, paginationContainer } from './UI.js';
 import { addLike } from '../models/api.js';
 import toggleLikeBtn from './likesView.js';
 
@@ -79,7 +79,20 @@ const initializeLikeButtons = () => {
   }
 };
 
+const renderNavItems = (count) => {
+  const itemHtml = `<li><a href="#">Recipes (${count})</a></li>
+            <li>Hotels</li>
+            <li>Resturants</li>`;
+  navListContainer.innerHTML = itemHtml;
+};
+
+const getItemsCount = (count) => {
+  renderNavItems(count);
+  return count;
+};
+
 const renderResults = (recipies, likes, page = 1, resPerPage = 6) => {
+  getItemsCount(recipies.length);
   const start = (page - 1) * resPerPage;
   const end = page * resPerPage;
 
