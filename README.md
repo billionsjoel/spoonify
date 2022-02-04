@@ -16,7 +16,7 @@
 
 ### Live Demo
 
-- Click [here]() for the live site.
+- Click [here](https://billionsjoel.github.io/spoonify/) for the live site.
 
 ### Video Demo
 
