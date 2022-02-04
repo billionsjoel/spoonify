@@ -12,18 +12,18 @@
  |
  */
 
-const LIKES_URL =	'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/l1wyQq7Jrf2t34Tkma8G/likes';
+const LIKES_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/l1wyQq7Jrf2t34Tkma8G/likes';
 
 export default class Recipies {
   constructor() {
     this.query = 'https://www.themealdb.com/api/json/v1/1/categories.php';
   }
 
-	getRecipies = async () => {
-	  const response = await fetch(`${this.query}`);
-	  this.results = await response.json();
-	  return this.results;
-	};
+getRecipies = async () => {
+  const response = await fetch(`${this.query}`);
+  this.results = await response.json();
+  return this.results;
+};
 }
 
 const getLikes = async () => {
