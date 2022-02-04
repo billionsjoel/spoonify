@@ -12,34 +12,44 @@
 - No Frameworks
 - Webpack
 - Git, Github and VsCode.
--Jest framework
+  -Jest framework
 
 ### Live Demo
- - Click [here]() for the live site.
+
+- Click [here]() for the live site.
+
+### Video Demo
+
+- Click [here](https://drive.google.com/file/d/1wZM0TTMX-FRgwLxTkfpAQY_wYMVqOgkR/view?usp=sharing) for the video demo.
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+
 - A modern upto-date browser
 - Text Editor or IDE
 
 ### Setup
- 1. Clone the Repo or Download the Zip file or ``` https://github.com/billionsjoel/spoonify.git ```.
- 2. ``` cd/spoonify ```
+
+1.  Clone the Repo or Download the Zip file or `https://github.com/billionsjoel/spoonify.git`.
+2.  `cd/spoonify`
 
 ### Install
- After cloning the project you need to run these commands
- - `` npm install `` `` This command will download all the dependancies of the project ``
- - `` npm run build ``
- - `` npm run start ``
+
+After cloning the project you need to run these commands
+
+- `npm install` `This command will download all the dependancies of the project`
+- `npm run build`
+- `npm run start`
 
 ### Tests
+
 - run npm test
 
-
 ### Usage
+
 - open index.html file with a server or localhost.
 
 ## Authors
@@ -55,7 +65,6 @@ To get a local copy up and running follow these simple example steps.
 - GitHub: [@tresorsawasawa](https://github.com/tresorsawasawa)
 - Twitter: [@tresorsawasawa](https://twitter.com/TresorSawasawa)
 - LinkedIn: [Trésor Sawasawa](https://www.linkedin.com/in/tr%C3%A9sor-sawasawa-43745320b/)
-
 
 ## 🤝 Contributing
 
