@@ -109,4 +109,4 @@ const renderResults = (recipies, likes, page = 1, resPerPage = 6) => {
   renderBtns(page, recipies.length, resPerPage);
   initializeLikeButtons();
 };
-export { initializeLikeButtons, renderResults };
+export { initializeLikeButtons, renderResults, getItemsCount };
