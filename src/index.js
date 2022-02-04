@@ -39,7 +39,7 @@ const seePop = async () => {
       const form = document.querySelector('.form');
       form.addEventListener('submit', (e) => {
         const inputName = document.querySelector('.input-name');
-        const inputComment = document.querySelector('.comment-msg');
+        const inputComment = document.querySelector('.comment-textarea');
         const newComment = {
           item_id: cardId,
           username: inputName.value,
@@ -49,7 +49,6 @@ const seePop = async () => {
         sendComment(newComment);
         form.reset();
         getComments(cardId);
-        // location.reload();
       });
     });
   });
