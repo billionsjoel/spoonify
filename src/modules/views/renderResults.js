@@ -1,6 +1,6 @@
 import { cardsContainer, paginationContainer } from './UI.js';
 import Recipies, { getLikes, addLike } from '../models/api.js';
-import { toggleLikeBtn } from './likesView';
+import toggleLikeBtn from './likesView';
 
 const renderRecipe = (recipe) => {
   const cardHtml = `<div class="card" data-id = "${recipe.idCategory}">
