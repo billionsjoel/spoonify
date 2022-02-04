@@ -1,4 +1,4 @@
-import { cardsContainer, paginationContainer } from './UI.js';
+import { cardsContainer, navListContainer, paginationContainer } from './UI.js';
 import { addLike } from '../models/api.js';
 import toggleLikeBtn from './likesView.js';
 
@@ -78,6 +78,8 @@ const initializeLikeButtons = () => {
     });
   }
 };
+
+
 
 const renderResults = (recipies, likes, page = 1, resPerPage = 6) => {
   const start = (page - 1) * resPerPage;
