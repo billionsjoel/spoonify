@@ -79,15 +79,20 @@ const initializeLikeButtons = () => {
   }
 };
 
-const renderNavItems = (length) => {
-  const itemHtml = `<li><a href="#">Recipes (${length})</a></li>
+const renderNavItems = (count) => {
+  const itemHtml = `<li><a href="#">Recipes (${count})</a></li>
             <li>Hotels</li>
             <li>Resturants</li>`;
   navListContainer.innerHTML = itemHtml;
 };
 
+const getItemsCount = (count) => {
+  renderNavItems(count);
+  return count;
+};
+
 const renderResults = (recipies, likes, page = 1, resPerPage = 6) => {
-  renderNavItems(recipies.length);
+  getItemsCount(recipies.length);
   const start = (page - 1) * resPerPage;
   const end = page * resPerPage;
 
