@@ -79,7 +79,12 @@ const initializeLikeButtons = () => {
   }
 };
 
-
+const renderNavItems = (length) => {
+  const itemHtml = `<li><a href="#">Recipes (${length})</a></li>
+            <li>Hotels</li>
+            <li>Resturants</li>`;
+  navListContainer.innerHTML = itemHtml;
+};
 
 const renderResults = (recipies, likes, page = 1, resPerPage = 6) => {
   const start = (page - 1) * resPerPage;
