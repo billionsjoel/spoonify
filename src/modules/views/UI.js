@@ -1,6 +1,7 @@
 const cardsContainer = document.querySelector('.cards');
 const paginationContainer = document.querySelector('.pagination-container');
 const likesContainer = document.querySelector('.likes');
+const navListContainer = document.querySelector('.nav-items');
 
 const clearResults = () => {
   cardsContainer.innerHTML = '';
