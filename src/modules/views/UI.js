@@ -1,5 +1,6 @@
 const cardsContainer = document.querySelector('.cards');
 const paginationContainer = document.querySelector('.pagination-container');
+const likesContainer = document.querySelector('.likes');
 
 const clearResults = () => {
   cardsContainer.innerHTML = '';
@@ -29,4 +30,5 @@ export {
   clearLoader,
   paginationContainer,
   clearResults,
+  likesContainer,
 };
