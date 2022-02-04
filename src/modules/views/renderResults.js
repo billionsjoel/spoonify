@@ -87,9 +87,8 @@ const renderResults = (recipies, likes, page = 1, resPerPage = 6) => {
   recipies.slice(start, end).forEach((value) => {
     const filteredLikes = likes.filter((e) => value.idCategory === e.item_id);
 
-    value.likes =			filteredLikes === undefined || filteredLikes[0] === undefined
-			  ? 0
-			  : filteredLikes[0].likes;
+    value.likes = filteredLikes === undefined || filteredLikes[0] === undefined
+      ? 0 : filteredLikes[0].likes;
     renderRecipe(value);
   });
   // recipies.forEach(renderLike);
