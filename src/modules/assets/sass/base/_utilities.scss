@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 *,
 ::after,
@@ -11,16 +11,27 @@
 
 body {
   font-family: 'Nunito', sans-serif;
-  background-image: linear-gradient(to right bottom, rgb(251, 219, 137), rgb(244, 137, 130));
+  background-image:
+    linear-gradient(
+      to right bottom,
+      rgb(251, 219, 137),
+      rgb(244, 137, 130)
+    );
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-a { text-decoration: none; }
+a {
+  text-decoration: none;
+}
 
-.clickable { cursor: pointer; }
+.clickable {
+  cursor: pointer;
+}
 
-.heading { display: none; }
+.heading {
+  display: none;
+}
 
 .container {
   width: 60%;
@@ -34,4 +45,8 @@ a { text-decoration: none; }
   letter-spacing: 0.3rem;
   font-size: 2rem;
   color: $bg-text-dark;
+}
+
+.text-primary {
+  color: $color-primary-dark;
 }

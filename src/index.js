@@ -1,28 +1,30 @@
 import './modules/assets/sass/style.scss';
-import Recipies from './modules/models/api.js';
-import renderResults from './modules/views/renderResults.js';
+import Recipies, { getLikes } from './modules/models/api.js';
+import { renderResults } from './modules/views/renderResults.js';
 import {
   renderLoader,
   cardsContainer,
   clearLoader,
+  paginationContainer,
+  clearResults,
 } from './modules/views/UI.js';
 import { closePopup, displayPopup } from './modules/models/controllers.js';
 import showPop from './modules/views/comentPopup.js';
 import { sendComment, getComments } from './modules/models/involvementApi.js';
 
+
 const state = {};
 
-const seePop = async () => {
-  const commentBnts = document.querySelectorAll('.btn');
-  const recipies = await state.recipe.results.categories;
-
+const updateGlobalState = async () => {
+  // instatiate api call
+  state.recipe = new Recipies();
   // prepare UI for results
   renderLoader(cardsContainer);
-  // search for results
-  await state.recipe.getRecipies();
 
-  //  render results on the UI
-  // console.log(state.recipe.results);
+  // wait and get for results
+  await state.recipe.getRecipies();
+  state.likes = await getLikes();
+
   clearLoader();
 
   commentBnts.forEach((btn) => {
@@ -53,15 +55,20 @@ const seePop = async () => {
     });
   });
 };
+  //  render results on the UI
 
-const updateGlobalState = async () => {
-  state.recipe = new Recipies();
-  await state.recipe.getRecipies();
-  renderResults(state.recipe.results.categories);
-  showPop(state.recipe.results.categories);
-  seePop();
+  renderResults(state.recipe.results.categories, state.likes);
 };
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
   updateGlobalState();
+});
+
+paginationContainer.addEventListener('click', (e) => {
+  const btn = e.target.closest('.pagination');
+  if (btn) {
+    const goToPage = parseInt(btn.dataset.goto, 10);
+    clearResults();
+    renderResults(state.recipe.results.categories, state.likes, goToPage);
+  }
 });

@@ -1,10 +1,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# The Recipe App.
+# The Spoonify Recipe App.
 
 > This app helps you search all recipes on the internet and provides you with all necessary information you need about the recipe. You can comment, reserve or like a recipe.
 
-![screenshot](./app-screenshot1.png)
+![screenshot](./src/modules/assets/images/app-screenshot.png)
 
 ## Built With
 
