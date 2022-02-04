@@ -54,7 +54,7 @@
     }
 
     & .comments {
-      width: 300px;
+      width: 70%;
       color: $bg-text-dark;
 
       &__title {
@@ -65,6 +65,14 @@
       .comments-list {
         margin: 10px auto;
         padding-left: 1.3rem;
+
+        .comment-item {
+          & .username {
+            text-transform: capitalize;
+            font-weight: bolder;
+          }
+          & .comment-msg { font-style: italic; }
+        }
       }
     }
 
